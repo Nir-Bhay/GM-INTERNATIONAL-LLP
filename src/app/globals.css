@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-inter text-charcoal-light antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-montserrat font-bold;
+  }
+}
+
+@layer components {
+  .container-main {
+    @apply max-w-container mx-auto px-6 lg:px-12;
+  }
+  
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-gold text-black font-montserrat font-semibold text-sm tracking-wider uppercase rounded-md transition-colors duration-200 hover:bg-gold-dark;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-gold text-gold font-montserrat font-semibold text-sm tracking-wider uppercase rounded-md transition-all duration-200 hover:bg-gold hover:text-black;
+  }
+  
+  .btn-dark {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-charcoal text-white font-montserrat font-semibold text-sm tracking-wider uppercase rounded-md transition-colors duration-200 hover:bg-charcoal-light;
+  }
+  
+  .section-heading {
+    @apply font-montserrat font-bold text-3xl md:text-4xl text-charcoal relative inline-block;
+  }
+  
+  .section-heading::after {
+    content: '';
+    @apply absolute left-0 -bottom-3 w-16 h-1 bg-gold;
+  }
+  
+  .section-heading-center {
+    @apply font-montserrat font-bold text-3xl md:text-4xl text-charcoal text-center;
+  }
+  
+  .section-heading-center::after {
+    content: '';
+    @apply block w-16 h-1 bg-gold mx-auto mt-4;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl p-6 transition-transform duration-300;
+  }
+  
+  .card-elevated {
+    @apply bg-white rounded-xl p-6 border border-gray-100;
+  }
+  
+  .nav-link {
+    @apply font-montserrat font-semibold text-[13px] tracking-[1.5px] uppercase text-charcoal transition-colors duration-200 hover:text-gold;
+  }
+  
+  .nav-link-active {
+    @apply text-gold border-b-2 border-gold pb-1;
+  }
+  
+  .gold-underline {
+    @apply relative;
+  }
+  
+  .gold-underline::after {
+    content: '';
+    @apply absolute left-0 -bottom-2 w-12 h-0.5 bg-gold;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-200 rounded-lg font-inter text-base text-charcoal-light placeholder-gray-400 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors duration-200;
+  }
+  
+  .label-field {
+    @apply block font-montserrat font-medium text-sm text-charcoal-light mb-2;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .gold-gradient {
+    @apply bg-gradient-to-r from-gold to-gold-dark;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}
+
+/* Ticker animation */
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  animation: ticker 30s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
