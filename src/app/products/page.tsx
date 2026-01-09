@@ -21,7 +21,7 @@ const products = [
     applications: ['Electrical wiring', 'Power transmission', 'Electronics', 'Plumbing'],
     lmeRate: 12846.5,
     change: 38,
-    image: 'https://images.unsplash.com/photo-1611273298545-0361288f341d?auto=format&fit=crop&q=80&w=800',
+    image: '/images/copper-cathodes-wire.png',
     popular: true,
   },
   {
@@ -36,7 +36,7 @@ const products = [
     applications: ['Automotive', 'Construction', 'Packaging', 'Aerospace'],
     lmeRate: 3063.5,
     change: -22,
-    image: 'https://images.unsplash.com/photo-1584013323583-825c93faa1e7?auto=format&fit=crop&q=80&w=800',
+    image: '/images/aluminium-ingots.png',
     popular: false,
   },
   {
@@ -51,7 +51,7 @@ const products = [
     applications: ['Stainless steel', 'Batteries', 'Superalloys', 'Plating'],
     lmeRate: 16895,
     change: -155,
-    image: 'https://images.unsplash.com/photo-1542332213-9b5a5a3fab35?auto=format&fit=crop&q=80&w=800',
+    image: '/images/nickel-cathodes.png',
     popular: false,
   },
   {
@@ -66,7 +66,7 @@ const products = [
     applications: ['Batteries', 'Radiation shielding', 'Cable sheathing', 'Weights'],
     lmeRate: 2013.5,
     change: -42,
-    image: 'https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&q=80&w=800',
+    image: '/images/lead-ingots.png',
     popular: false,
   },
   {
@@ -81,7 +81,7 @@ const products = [
     applications: ['Galvanizing', 'Die-casting', 'Brass production', 'Pharmaceuticals'],
     lmeRate: 3171,
     change: -34,
-    image: 'https://images.unsplash.com/photo-1533038590840-1cde6e66b060?auto=format&fit=crop&q=80&w=800',
+    image: '/images/zinc-ingots.png',
     popular: false,
   },
   {
@@ -96,7 +96,7 @@ const products = [
     applications: ['Soldering', 'Tinplate', 'Food packaging', 'Bronze alloys'],
     lmeRate: 41900,
     change: 25,
-    image: 'https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?auto=format&fit=crop&q=80&w=800',
+    image: '/images/tin-ingots-bars.png',
     popular: false,
   },
 ]
@@ -138,10 +138,10 @@ export default function ProductsPage() {
     <>
       {/* Hero Banner */}
       <section className="relative h-[350px] flex items-center bg-charcoal pt-[72px]">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80")',
+            backgroundImage: 'url("/images/premium-metals-hero.png")',
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/50" />
@@ -171,9 +171,8 @@ export default function ProductsPage() {
           <div className="flex overflow-x-auto pb-2 lg:pb-0 gap-3 no-scrollbar">
             <button
               onClick={() => setFilter('all')}
-              className={`whitespace-nowrap px-5 py-2.5 rounded-lg font-montserrat font-medium text-sm transition-colors ${
-                filter === 'all' ? 'bg-gold text-black' : 'border border-gray-200 text-charcoal hover:border-gold'
-              }`}
+              className={`whitespace-nowrap px-5 py-2.5 rounded-lg font-montserrat font-medium text-sm transition-colors ${filter === 'all' ? 'bg-gold text-black' : 'border border-gray-200 text-charcoal hover:border-gold'
+                }`}
             >
               All Metals
             </button>
@@ -181,9 +180,8 @@ export default function ProductsPage() {
               <button
                 key={product.id}
                 onClick={() => setFilter(product.id)}
-                className={`whitespace-nowrap px-5 py-2.5 rounded-lg font-montserrat font-medium text-sm transition-colors ${
-                  filter === product.id ? 'bg-gold text-black' : 'border border-gray-200 text-charcoal hover:border-gold'
-                }`}
+                className={`whitespace-nowrap px-5 py-2.5 rounded-lg font-montserrat font-medium text-sm transition-colors ${filter === product.id ? 'bg-gold text-black' : 'border border-gray-200 text-charcoal hover:border-gold'
+                  }`}
               >
                 {product.name}
               </button>
@@ -199,93 +197,93 @@ export default function ProductsPage() {
             {products
               .filter(p => filter === 'all' || p.id === filter)
               .map((product) => (
-              <div 
-                key={product.id}
-                id={product.id}
-                className="bg-white rounded-xl overflow-hidden border border-gray-100 group hover:border-gold/30 transition-colors"
-              >
-                {/* Image Container */}
-                <div className="relative h-52 overflow-hidden">
-                  <Image 
-                    src={product.image} 
-                    alt={product.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
-                  
-                  {product.popular && (
-                    <span className="absolute top-4 right-4 z-10 bg-gold text-black text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">
-                      Popular
-                    </span>
-                  )}
-                </div>
+                <div
+                  key={product.id}
+                  id={product.id}
+                  className="bg-white rounded-xl overflow-hidden border border-gray-100 group hover:border-gold/30 transition-colors"
+                >
+                  {/* Image Container */}
+                  <div className="relative h-52 overflow-hidden">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
 
-                {/* Content */}
-                <div className="p-6">
-                  <h3 className="font-montserrat font-bold text-xl text-charcoal mb-1">
-                    {product.name}
-                  </h3>
-                  <p className="text-gold text-sm font-medium mb-3">
-                    {product.tagline}
-                  </p>
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                    {product.description}
-                  </p>
-
-                  {/* Specs */}
-                  <div className="grid grid-cols-2 gap-3 mb-4 text-sm">
-                    <div className="bg-offwhite rounded-lg px-3 py-2">
-                      <span className="text-gray-400 text-xs block">Grade</span>
-                      <span className="text-charcoal font-medium">{product.grade}</span>
-                    </div>
-                    <div className="bg-offwhite rounded-lg px-3 py-2">
-                      <span className="text-gray-400 text-xs block">Purity</span>
-                      <span className="text-charcoal font-medium">{product.purity}</span>
-                    </div>
+                    {product.popular && (
+                      <span className="absolute top-4 right-4 z-10 bg-gold text-black text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">
+                        Popular
+                      </span>
+                    )}
                   </div>
 
-                  {/* Forms */}
-                  <div className="mb-4">
-                    <span className="text-gray-400 text-xs block mb-2">Available Forms</span>
-                    <div className="flex flex-wrap gap-2">
-                      {product.forms.slice(0, 3).map((form, i) => (
-                        <span key={i} className="text-xs bg-gray-100 text-charcoal px-2 py-1 rounded">
-                          {form}
-                        </span>
-                      ))}
-                      {product.forms.length > 3 && (
-                        <span className="text-xs text-gold font-medium">
-                          +{product.forms.length - 3} more
-                        </span>
-                      )}
-                    </div>
-                  </div>
+                  {/* Content */}
+                  <div className="p-6">
+                    <h3 className="font-montserrat font-bold text-xl text-charcoal mb-1">
+                      {product.name}
+                    </h3>
+                    <p className="text-gold text-sm font-medium mb-3">
+                      {product.tagline}
+                    </p>
+                    <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                      {product.description}
+                    </p>
 
-                  {/* LME Rate */}
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                    <div>
-                      <span className="text-xs text-gray-400 uppercase tracking-wide block">LME Rate</span>
-                      <div className="flex items-center gap-2">
-                        <span className="font-montserrat font-semibold text-charcoal">
-                          ${product.lmeRate.toLocaleString()}/MT
-                        </span>
-                        <span className={`flex items-center text-xs font-medium ${product.change >= 0 ? 'text-success' : 'text-danger'}`}>
-                          {product.change >= 0 ? <TrendingUp size={12} /> : <TrendingDown size={12} />}
-                          <span className="ml-1">{product.change >= 0 ? '+' : ''}{product.change}</span>
-                        </span>
+                    {/* Specs */}
+                    <div className="grid grid-cols-2 gap-3 mb-4 text-sm">
+                      <div className="bg-offwhite rounded-lg px-3 py-2">
+                        <span className="text-gray-400 text-xs block">Grade</span>
+                        <span className="text-charcoal font-medium">{product.grade}</span>
+                      </div>
+                      <div className="bg-offwhite rounded-lg px-3 py-2">
+                        <span className="text-gray-400 text-xs block">Purity</span>
+                        <span className="text-charcoal font-medium">{product.purity}</span>
                       </div>
                     </div>
-                    <Link 
-                      href="/contact"
-                      className="btn-primary text-xs py-2 px-4"
-                    >
-                      Get Quote
-                    </Link>
+
+                    {/* Forms */}
+                    <div className="mb-4">
+                      <span className="text-gray-400 text-xs block mb-2">Available Forms</span>
+                      <div className="flex flex-wrap gap-2">
+                        {product.forms.slice(0, 3).map((form, i) => (
+                          <span key={i} className="text-xs bg-gray-100 text-charcoal px-2 py-1 rounded">
+                            {form}
+                          </span>
+                        ))}
+                        {product.forms.length > 3 && (
+                          <span className="text-xs text-gold font-medium">
+                            +{product.forms.length - 3} more
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* LME Rate */}
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <div>
+                        <span className="text-xs text-gray-400 uppercase tracking-wide block">LME Rate</span>
+                        <div className="flex items-center gap-2">
+                          <span className="font-montserrat font-semibold text-charcoal">
+                            ${product.lmeRate.toLocaleString()}/MT
+                          </span>
+                          <span className={`flex items-center text-xs font-medium ${product.change >= 0 ? 'text-success' : 'text-danger'}`}>
+                            {product.change >= 0 ? <TrendingUp size={12} /> : <TrendingDown size={12} />}
+                            <span className="ml-1">{product.change >= 0 ? '+' : ''}{product.change}</span>
+                          </span>
+                        </div>
+                      </div>
+                      <Link
+                        href="/contact"
+                        className="btn-primary text-xs py-2 px-4"
+                      >
+                        Get Quote
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       </section>
@@ -301,11 +299,10 @@ export default function ProductsPage() {
               <button
                 key={product.id}
                 onClick={() => setActiveProduct(product.id)}
-                className={`whitespace-nowrap px-6 py-3 rounded-lg font-montserrat font-medium text-sm transition-colors ${
-                  activeProduct === product.id 
-                    ? 'bg-charcoal text-white' 
+                className={`whitespace-nowrap px-6 py-3 rounded-lg font-montserrat font-medium text-sm transition-colors ${activeProduct === product.id
+                    ? 'bg-charcoal text-white'
                     : 'bg-gray-100 text-charcoal hover:bg-gray-200'
-                }`}
+                  }`}
               >
                 {product.name}
               </button>
@@ -316,8 +313,8 @@ export default function ProductsPage() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Image */}
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-gray-100">
-              <Image 
-                src={activeProductData.image} 
+              <Image
+                src={activeProductData.image}
                 alt={activeProductData.name}
                 fill
                 className="object-cover"
@@ -398,7 +395,7 @@ export default function ProductsPage() {
 
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
             {qualityFeatures.map((feature, index) => (
-              <div 
+              <div
                 key={index}
                 className="text-center p-6 border border-gold/20 rounded-xl"
               >

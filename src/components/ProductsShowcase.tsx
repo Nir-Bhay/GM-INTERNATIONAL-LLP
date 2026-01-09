@@ -11,7 +11,7 @@ const products = [
     purity: '99.99%',
     lmeRate: 12846.5,
     change: 38,
-    image: 'https://images.unsplash.com/photo-1611273298545-0361288f341d?auto=format&fit=crop&q=80&w=800',
+    image: '/images/copper-cathodes-wire.png',
     popular: true,
   },
   {
@@ -22,7 +22,7 @@ const products = [
     purity: '99.7%',
     lmeRate: 3063.5,
     change: -22,
-    image: 'https://images.unsplash.com/photo-1584013323583-825c93faa1e7?auto=format&fit=crop&q=80&w=800',
+    image: '/images/aluminium-ingots.png',
     popular: false,
   },
   {
@@ -33,7 +33,7 @@ const products = [
     purity: '99.8%',
     lmeRate: 16895,
     change: -155,
-    image: 'https://images.unsplash.com/photo-1542332213-9b5a5a3fab35?auto=format&fit=crop&q=80&w=800',
+    image: '/images/nickel-cathodes.png',
     popular: false,
   },
   {
@@ -44,7 +44,7 @@ const products = [
     purity: '99.97%',
     lmeRate: 2013.5,
     change: -42,
-    image: 'https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&q=80&w=800',
+    image: '/images/lead-ingots.png',
     popular: false,
   },
   {
@@ -55,7 +55,7 @@ const products = [
     purity: '99.995%',
     lmeRate: 3171,
     change: -34,
-    image: 'https://images.unsplash.com/photo-1533038590840-1cde6e66b060?auto=format&fit=crop&q=80&w=800',
+    image: '/images/zinc-ingots.png',
     popular: false,
   },
   {
@@ -66,7 +66,7 @@ const products = [
     purity: '99.9%',
     lmeRate: 41900,
     change: 25,
-    image: 'https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?auto=format&fit=crop&q=80&w=800',
+    image: '/images/tin-ingots-bars.png',
     popular: false,
   },
 ]
@@ -84,20 +84,20 @@ export default function ProductsShowcase() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
-            <div 
+            <div
               key={product.id}
               className="bg-white rounded-xl overflow-hidden border border-gray-100 group hover:border-gold/30 transition-colors"
             >
               {/* Image Container */}
               <div className="relative h-48 overflow-hidden">
-                <Image 
-                  src={product.image} 
+                <Image
+                  src={product.image}
                   alt={product.name}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
-                
+
                 {product.popular && (
                   <span className="absolute top-4 right-4 z-10 bg-gold text-black text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">
                     Popular
@@ -140,7 +140,7 @@ export default function ProductsShowcase() {
                       </span>
                     </div>
                   </div>
-                  <Link 
+                  <Link
                     href={`/products#${product.id}`}
                     className="text-gold font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all"
                   >
