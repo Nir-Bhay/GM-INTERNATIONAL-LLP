@@ -99,9 +99,9 @@ export default function ContactPage() {
       </section>
 
       {/* Main Contact Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 lg:py-20 bg-white">
         <div className="container-main">
-          <div className="grid lg:grid-cols-5 gap-12">
+          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
             {/* Contact Form - 3 cols */}
             <div className="lg:col-span-3">
               <div className="bg-white rounded-xl p-8 border border-gray-100">

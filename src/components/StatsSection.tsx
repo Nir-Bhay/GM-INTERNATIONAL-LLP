@@ -58,11 +58,11 @@ function StatItem({ value, suffix, label }: { value: number; suffix: string; lab
   }, [start, label])
 
   return (
-    <div id={`stat-${label}`} className="text-center">
-      <div className="font-montserrat font-bold text-5xl lg:text-6xl text-gold mb-2">
+    <div id={`stat-${label}`} className="text-center p-4">
+      <div className="font-montserrat font-bold text-4xl md:text-5xl lg:text-6xl text-gold mb-2">
         {count}{suffix}
       </div>
-      <div className="font-inter text-white/80 text-sm uppercase tracking-wider">
+      <div className="font-inter text-white/80 text-xs md:text-sm uppercase tracking-wider">
         {label}
       </div>
     </div>
@@ -71,7 +71,7 @@ function StatItem({ value, suffix, label }: { value: number; suffix: string; lab
 
 export default function StatsSection() {
   return (
-    <section className="py-20 bg-charcoal relative overflow-hidden">
+    <section className="py-12 lg:py-20 bg-charcoal relative overflow-hidden">
       {/* Subtle pattern overlay */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -81,7 +81,7 @@ export default function StatsSection() {
       </div>
       
       <div className="container-main relative z-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-8">
           {stats.map((stat, index) => (
             <StatItem key={index} {...stat} />
           ))}

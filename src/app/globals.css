@@ -95,6 +95,14 @@
   .gold-gradient {
     @apply bg-gradient-to-r from-gold to-gold-dark;
   }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 /* Custom scrollbar */

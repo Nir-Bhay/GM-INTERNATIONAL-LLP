@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { TrendingUp, TrendingDown, ArrowRight, Shield, Award, Globe, Zap, Building, Cpu, Car, Wrench, Radio } from 'lucide-react'
 import LiveRatesTicker from '@/components/LiveRatesTicker'
 import DelhiSpotRates from '@/components/DelhiSpotRates'
@@ -165,12 +166,12 @@ export default function ProductsPage() {
       <LiveRatesTicker />
 
       {/* Filter Bar */}
-      <section className="py-6 bg-white border-b border-gray-100">
+      <section className="py-4 lg:py-6 bg-white border-b border-gray-100 sticky top-[72px] z-30 shadow-sm">
         <div className="container-main">
-          <div className="flex flex-wrap gap-3">
+          <div className="flex overflow-x-auto pb-2 lg:pb-0 gap-3 no-scrollbar">
             <button
               onClick={() => setFilter('all')}
-              className={`px-5 py-2.5 rounded-lg font-montserrat font-medium text-sm transition-colors ${
+              className={`whitespace-nowrap px-5 py-2.5 rounded-lg font-montserrat font-medium text-sm transition-colors ${
                 filter === 'all' ? 'bg-gold text-black' : 'border border-gray-200 text-charcoal hover:border-gold'
               }`}
             >
@@ -180,7 +181,7 @@ export default function ProductsPage() {
               <button
                 key={product.id}
                 onClick={() => setFilter(product.id)}
-                className={`px-5 py-2.5 rounded-lg font-montserrat font-medium text-sm transition-colors ${
+                className={`whitespace-nowrap px-5 py-2.5 rounded-lg font-montserrat font-medium text-sm transition-colors ${
                   filter === product.id ? 'bg-gold text-black' : 'border border-gray-200 text-charcoal hover:border-gold'
                 }`}
               >
@@ -192,9 +193,9 @@ export default function ProductsPage() {
       </section>
 
       {/* Products Grid */}
-      <section className="py-16 bg-offwhite">
+      <section className="py-12 lg:py-16 bg-offwhite">
         <div className="container-main">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {products
               .filter(p => filter === 'all' || p.id === filter)
               .map((product) => (
@@ -205,10 +206,11 @@ export default function ProductsPage() {
               >
                 {/* Image Container */}
                 <div className="relative h-52 overflow-hidden">
-                  <img 
+                  <Image 
                     src={product.image} 
                     alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
                   
@@ -289,17 +291,17 @@ export default function ProductsPage() {
       </section>
 
       {/* Product Specifications Detail */}
-      <section className="py-16 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="container-main">
-          <h2 className="section-heading-center mb-12">Product Specifications</h2>
+          <h2 className="section-heading-center mb-8 lg:mb-12">Product Specifications</h2>
 
           {/* Tabs */}
-          <div className="flex flex-wrap justify-center gap-2 mb-10">
+          <div className="flex overflow-x-auto pb-4 lg:pb-0 lg:flex-wrap lg:justify-center gap-2 mb-8 lg:mb-10 no-scrollbar">
             {products.map((product) => (
               <button
                 key={product.id}
                 onClick={() => setActiveProduct(product.id)}
-                className={`px-6 py-3 rounded-lg font-montserrat font-medium text-sm transition-colors ${
+                className={`whitespace-nowrap px-6 py-3 rounded-lg font-montserrat font-medium text-sm transition-colors ${
                   activeProduct === product.id 
                     ? 'bg-charcoal text-white' 
                     : 'bg-gray-100 text-charcoal hover:bg-gray-200'
@@ -311,13 +313,14 @@ export default function ProductsPage() {
           </div>
 
           {/* Tab Content */}
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Image */}
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-gray-100">
-              <img 
+              <Image 
                 src={activeProductData.image} 
                 alt={activeProductData.name}
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
               />
             </div>
 
@@ -387,13 +390,13 @@ export default function ProductsPage() {
       <DelhiSpotRates />
 
       {/* Quality Assurance */}
-      <section className="py-16 bg-charcoal">
+      <section className="py-12 lg:py-16 bg-charcoal">
         <div className="container-main">
-          <h2 className="font-montserrat font-bold text-3xl text-gold text-center mb-12">
+          <h2 className="font-montserrat font-bold text-3xl text-gold text-center mb-8 lg:mb-12">
             Quality You Can Trust
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
             {qualityFeatures.map((feature, index) => (
               <div 
                 key={index}
@@ -413,11 +416,11 @@ export default function ProductsPage() {
       </section>
 
       {/* Industries We Serve */}
-      <section className="py-16 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="container-main">
-          <h2 className="section-heading-center mb-12">Industries We Serve</h2>
+          <h2 className="section-heading-center mb-8 lg:mb-12">Industries We Serve</h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-6">
             {industries.map((industry, index) => (
               <div key={index} className="text-center p-4">
                 <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-offwhite flex items-center justify-center">

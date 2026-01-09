@@ -11,7 +11,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[680px] flex items-center bg-charcoal pt-[72px]">
+      <section className="relative min-h-[500px] lg:min-h-[680px] flex items-center bg-charcoal pt-[72px]">
         {/* Background Image Overlay */}
         <div 
           className="absolute inset-0 bg-cover bg-center"
@@ -22,7 +22,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
         </div>
 
-        <div className="container-main relative z-10 py-20">
+        <div className="container-main relative z-10 py-12 lg:py-20">
           <div className="max-w-2xl">
             {/* Eyebrow */}
             <p className="font-montserrat font-medium text-xs tracking-[3px] uppercase text-gold mb-5">
@@ -30,12 +30,12 @@ export default function HomePage() {
             </p>
 
             {/* Headline */}
-            <h1 className="font-montserrat font-bold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-6">
+            <h1 className="font-montserrat font-bold text-3xl sm:text-5xl lg:text-6xl text-white leading-tight mb-6">
               Premium Metals for Global Industries
             </h1>
 
             {/* Subheadline */}
-            <p className="font-inter text-lg text-white/80 mb-8 leading-relaxed max-w-xl">
+            <p className="font-inter text-base sm:text-lg text-white/80 mb-8 leading-relaxed max-w-xl">
               Export-grade copper, aluminium, nickel, lead, zinc & tin. LME-linked pricing. Serving 50+ countries from India.
             </p>
 

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Eye, Target, Diamond, Award, Users, Clock, CheckCircle } from 'lucide-react'
 import StatsSection from '@/components/StatsSection'
 import CTABanner from '@/components/CTABanner'
@@ -95,9 +96,9 @@ export default function AboutPage() {
       </section>
 
       {/* Company Introduction */}
-      <section className="py-20 bg-white">
+      <section className="py-12 lg:py-20 bg-white">
         <div className="container-main">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <span className="font-montserrat font-semibold text-sm text-gold uppercase tracking-widest mb-4 block">
                 Our Story
@@ -128,11 +129,12 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-2xl">
-                <img 
+              <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-2xl relative">
+                <Image 
                   src="https://images.unsplash.com/photo-1516387933901-8266440cda54?auto=format&fit=crop&q=80&w=1200" 
                   alt="Industrial Warehouse"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 w-24 h-24 border-4 border-gold rounded-xl -z-10" />
@@ -142,11 +144,11 @@ export default function AboutPage() {
       </section>
 
       {/* Vision & Mission */}
-      <section className="py-20 bg-offwhite">
+      <section className="py-12 lg:py-20 bg-offwhite">
         <div className="container-main">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
             {/* Vision */}
-            <div className="bg-white rounded-xl p-8 border-l-4 border-gold">
+            <div className="bg-white rounded-xl p-6 lg:p-8 border-l-4 border-gold">
               <Eye className="w-12 h-12 text-gold mb-6" strokeWidth={1.5} />
               <h3 className="font-montserrat font-bold text-2xl text-charcoal mb-4">
                 Our Vision
@@ -175,24 +177,25 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values */}
-      <section className="py-20 bg-white">
+      <section className="py-12 lg:py-20 bg-white">
         <div className="container-main">
-          <h2 className="section-heading-center mb-12">Our Core Values</h2>
+          <h2 className="section-heading-center mb-8 lg:mb-12">Our Core Values</h2>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {coreValues.map((value, index) => (
               <div 
                 key={index} 
                 className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-gold/20"
               >
                 <div className="h-40 overflow-hidden relative">
-                  <img 
+                  <Image 
                     src={value.image} 
                     alt={value.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-charcoal/80 group-hover:bg-charcoal/70 transition-colors flex items-center justify-center">
-                    <value.icon className="w-12 h-12 text-gold" strokeWidth={1.5} />
+                    <value.icon className="w-12 h-12 text-gold z-10" strokeWidth={1.5} />
                   </div>
                 </div>
                 
@@ -211,9 +214,9 @@ export default function AboutPage() {
       </section>
 
       {/* Journey Timeline */}
-      <section className="py-20 bg-charcoal">
+      <section className="py-12 lg:py-20 bg-charcoal">
         <div className="container-main">
-          <h2 className="font-montserrat font-bold text-3xl text-gold text-center mb-16">
+          <h2 className="font-montserrat font-bold text-3xl text-gold text-center mb-10 lg:mb-16">
             Our Journey
           </h2>
 
@@ -256,7 +259,7 @@ export default function AboutPage() {
       <StatsSection />
 
       {/* CTA */}
-      <section className="py-20 bg-white">
+      <section className="py-12 lg:py-20 bg-white">
         <div className="container-main text-center">
           <h2 className="font-montserrat font-bold text-3xl text-charcoal mb-4">
             Want to Know More?

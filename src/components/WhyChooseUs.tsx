@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Globe, ShieldCheck, Truck, Handshake } from 'lucide-react'
 
 const features = [
@@ -29,9 +30,9 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 lg:py-20 bg-white">
       <div className="container-main">
-        <h2 className="section-heading mb-12">Why GM International?</h2>
+        <h2 className="section-heading mb-8 lg:mb-12">Why GM International?</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
@@ -40,10 +41,11 @@ export default function WhyChooseUs() {
               className="group bg-offwhite hover:bg-white rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl border border-transparent hover:border-gold/20"
             >
               <div className="h-40 overflow-hidden relative">
-                 <img 
+                 <Image 
                    src={feature.image} 
                    alt={feature.title} 
-                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                   fill
+                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                  />
                  <div className="absolute inset-0 bg-charcoal/20 group-hover:bg-charcoal/10 transition-colors" />
               </div>

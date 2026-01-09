@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { TrendingUp, TrendingDown, ArrowRight } from 'lucide-react'
 
 const products = [
@@ -72,9 +73,9 @@ const products = [
 
 export default function ProductsShowcase() {
   return (
-    <section className="py-20 bg-offwhite">
+    <section className="py-12 lg:py-20 bg-offwhite">
       <div className="container-main">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 lg:mb-12">
           <h2 className="section-heading-center">Our Premium Metals</h2>
           <p className="text-gray-600 mt-6 max-w-2xl mx-auto">
             Export-grade metals meeting LME standards. Competitive pricing with reliable supply chain.
@@ -89,10 +90,11 @@ export default function ProductsShowcase() {
             >
               {/* Image Container */}
               <div className="relative h-48 overflow-hidden">
-                <img 
+                <Image 
                   src={product.image} 
                   alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
                 

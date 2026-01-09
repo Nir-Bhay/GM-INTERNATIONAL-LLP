@@ -81,13 +81,15 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100">
-          <nav className="container-main py-4 flex flex-col gap-4">
+        <div className="lg:hidden fixed inset-0 top-[72px] z-40 bg-white border-t border-gray-100 overflow-y-auto">
+          <nav className="container-main py-8 flex flex-col gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`nav-link py-2 ${pathname === link.href ? 'text-gold' : ''}`}
+                className={`nav-link text-lg font-medium py-2 border-b border-gray-50 ${
+                  pathname === link.href ? 'text-gold' : 'text-charcoal'
+                }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
@@ -95,7 +97,7 @@ export default function Header() {
             ))}
             <Link 
               href="/contact" 
-              className="btn-primary mt-4 text-center"
+              className="btn-primary mt-4 text-center justify-center py-4 text-base"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Get Quote

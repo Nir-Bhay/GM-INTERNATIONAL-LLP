@@ -11,7 +11,7 @@ const delhiRates = [
 
 export default function DelhiSpotRates() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 lg:py-20 bg-white">
       <div className="container-main">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-10">
           <div>

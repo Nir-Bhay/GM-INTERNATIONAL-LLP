@@ -19,11 +19,11 @@ const mcxRates = [
 
 export default function LiveRatesTicker() {
   const renderRateItem = (item: typeof lmeRates[0], index: number) => (
-    <div key={index} className="flex items-center gap-4 px-6 py-2 border-r border-gray-700 last:border-r-0">
-      <span className="font-montserrat font-semibold text-white text-sm uppercase tracking-wide">
+    <div key={index} className="flex items-center gap-2 md:gap-4 px-4 md:px-6 py-2 border-r border-gray-700 last:border-r-0">
+      <span className="font-montserrat font-semibold text-white text-xs md:text-sm uppercase tracking-wide whitespace-nowrap">
         {item.name}
       </span>
-      <span className="font-inter text-white font-medium">
+      <span className="font-inter text-white font-medium text-sm md:text-base">
         {item.rate.toLocaleString()}
       </span>
       <span className={`flex items-center gap-1 text-sm font-medium ${item.change >= 0 ? 'text-success' : 'text-danger'}`}>

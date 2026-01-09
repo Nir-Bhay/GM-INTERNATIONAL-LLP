@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { TrendingUp, TrendingDown, RefreshCw, Download, Clock } from 'lucide-react'
 import CTABanner from '@/components/CTABanner'
 
@@ -130,9 +131,9 @@ export default function LiveRatesPage() {
 
       {/* LME Rates */}
       {activeTab === 'lme' && (
-        <section className="py-12 bg-offwhite">
+        <section className="py-8 lg:py-12 bg-offwhite">
           <div className="container-main">
-            <div className="mb-8">
+            <div className="mb-6 lg:mb-8">
               <h2 className="font-montserrat font-bold text-2xl text-charcoal mb-2">
                 London Metal Exchange Rates
               </h2>
@@ -149,10 +150,12 @@ export default function LiveRatesPage() {
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
-                      <img 
+                      <Image 
                         src={metal.image} 
                         alt={metal.name}
-                        className="w-12 h-12 rounded-lg object-cover"
+                        width={48}
+                        height={48}
+                        className="rounded-lg object-cover"
                       />
                       <div>
                         <h3 className="font-montserrat font-semibold text-lg text-charcoal">
