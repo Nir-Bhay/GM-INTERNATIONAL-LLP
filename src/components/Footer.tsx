@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { MapPin, Phone, Mail, Linkedin, Twitter } from 'lucide-react'
 
 const footerLinks = {
@@ -25,21 +26,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 flex items-center justify-center">
-                <svg viewBox="0 0 44 44" className="w-full h-full">
-                  <g fill="#D4AF37">
-                    <path d="M22 2C12 2 4 10 4 20c0 2 .3 4 .9 6 .2-.5.5-1 .8-1.4C5.3 22.6 5 21.3 5 20c0-9.4 7.6-17 17-17s17 7.6 17 17c0 1.3-.3 2.6-.7 3.8.3.4.6.9.8 1.4.6-2 .9-4 .9-6 0-10-8-18-18-18z"/>
-                  </g>
-                  <text x="22" y="26" textAnchor="middle" fontSize="14" fontWeight="bold" fontFamily="Montserrat, sans-serif">
-                    <tspan fill="#29B6F6">G</tspan>
-                    <tspan fill="#D4AF37">M</tspan>
-                  </text>
-                </svg>
-              </div>
-              <div>
-                <span className="font-montserrat font-bold text-white block">GM International</span>
-                <span className="font-inter text-xs text-gray-400 tracking-wider uppercase">LLP</span>
+            <div className="flex items-center mb-6">
+              <div className="relative w-48 h-12">
+                <Image 
+                  src="/logo.png" 
+                  alt="GM International LLP" 
+                  fill
+                  className="object-contain object-left invert brightness-0"
+                  style={{ filter: 'brightness(0) invert(1)' }} 
+                />
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">

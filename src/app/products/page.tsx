@@ -20,6 +20,7 @@ const products = [
     applications: ['Electrical wiring', 'Power transmission', 'Electronics', 'Plumbing'],
     lmeRate: 12846.5,
     change: 38,
+    image: 'https://images.unsplash.com/photo-1611273298545-0361288f341d?auto=format&fit=crop&q=80&w=800',
     popular: true,
   },
   {
@@ -34,6 +35,7 @@ const products = [
     applications: ['Automotive', 'Construction', 'Packaging', 'Aerospace'],
     lmeRate: 3063.5,
     change: -22,
+    image: 'https://images.unsplash.com/photo-1584013323583-825c93faa1e7?auto=format&fit=crop&q=80&w=800',
     popular: false,
   },
   {
@@ -48,6 +50,7 @@ const products = [
     applications: ['Stainless steel', 'Batteries', 'Superalloys', 'Plating'],
     lmeRate: 16895,
     change: -155,
+    image: 'https://images.unsplash.com/photo-1542332213-9b5a5a3fab35?auto=format&fit=crop&q=80&w=800',
     popular: false,
   },
   {
@@ -62,6 +65,7 @@ const products = [
     applications: ['Batteries', 'Radiation shielding', 'Cable sheathing', 'Weights'],
     lmeRate: 2013.5,
     change: -42,
+    image: 'https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&q=80&w=800',
     popular: false,
   },
   {
@@ -76,6 +80,7 @@ const products = [
     applications: ['Galvanizing', 'Die-casting', 'Brass production', 'Pharmaceuticals'],
     lmeRate: 3171,
     change: -34,
+    image: 'https://images.unsplash.com/photo-1533038590840-1cde6e66b060?auto=format&fit=crop&q=80&w=800',
     popular: false,
   },
   {
@@ -90,6 +95,7 @@ const products = [
     applications: ['Soldering', 'Tinplate', 'Food packaging', 'Bronze alloys'],
     lmeRate: 41900,
     change: 25,
+    image: 'https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?auto=format&fit=crop&q=80&w=800',
     popular: false,
   },
 ]
@@ -197,16 +203,17 @@ export default function ProductsPage() {
                 id={product.id}
                 className="bg-white rounded-xl overflow-hidden border border-gray-100 group hover:border-gold/30 transition-colors"
               >
-                {/* Image placeholder */}
-                <div className="relative h-52 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                  <div className="text-center">
-                    <span className="font-montserrat text-5xl font-bold text-gray-300 block">
-                      {product.symbol}
-                    </span>
-                    <span className="text-gray-400 text-sm">{product.name}</span>
-                  </div>
+                {/* Image Container */}
+                <div className="relative h-52 overflow-hidden">
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
+                  
                   {product.popular && (
-                    <span className="absolute top-4 right-4 bg-gold text-black text-xs font-semibold px-3 py-1 rounded uppercase tracking-wide">
+                    <span className="absolute top-4 right-4 z-10 bg-gold text-black text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">
                       Popular
                     </span>
                   )}
@@ -306,13 +313,12 @@ export default function ProductsPage() {
           {/* Tab Content */}
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Image */}
-            <div className="relative aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl flex items-center justify-center">
-              <div className="text-center">
-                <span className="font-montserrat text-7xl font-bold text-gray-300 block mb-2">
-                  {activeProductData.symbol}
-                </span>
-                <span className="text-gray-400">{activeProductData.name}</span>
-              </div>
+            <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-gray-100">
+              <img 
+                src={activeProductData.image} 
+                alt={activeProductData.name}
+                className="w-full h-full object-cover"
+              />
             </div>
 
             {/* Details */}

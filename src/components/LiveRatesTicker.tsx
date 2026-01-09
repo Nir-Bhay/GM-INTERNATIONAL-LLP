@@ -3,12 +3,12 @@
 import { TrendingUp, TrendingDown } from 'lucide-react'
 
 const lmeRates = [
-  { name: 'Copper', rate: 12846.5, change: 38, unit: '$/MT' },
-  { name: 'Aluminium', rate: 3063.5, change: -22, unit: '$/MT' },
-  { name: 'Nickel', rate: 16895, change: -155, unit: '$/MT' },
-  { name: 'Lead', rate: 2013.5, change: -42, unit: '$/MT' },
-  { name: 'Zinc', rate: 3171, change: -34, unit: '$/MT' },
-  { name: 'Tin', rate: 41900, change: 25, unit: '$/MT' },
+  { name: 'Copper', rate: 12885, change: 38.5, unit: '$/MT' },
+  { name: 'Aluminium', rate: 3081, change: 17.5, unit: '$/MT' },
+  { name: 'Nickel', rate: 16920, change: 25, unit: '$/MT' },
+  { name: 'Lead', rate: 2006, change: -7.5, unit: '$/MT' },
+  { name: 'Zinc', rate: 3107, change: -64, unit: '$/MT' },
+  { name: 'Tin', rate: 44400, change: 2500, unit: '$/MT' },
 ]
 
 const mcxRates = [

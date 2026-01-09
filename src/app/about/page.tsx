@@ -8,21 +8,25 @@ const coreValues = [
     icon: Diamond,
     title: 'Quality',
     description: 'Premium grade metals meeting international LME standards.',
+    image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800'
   },
   {
     icon: Award,
     title: 'Integrity',
     description: 'Transparent dealings, honest pricing, and ethical practices.',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800'
   },
   {
     icon: Users,
     title: 'Partnership',
     description: 'Building lasting relationships with every client we serve.',
+    image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800'
   },
   {
     icon: Clock,
     title: 'Reliability',
     description: 'Timely delivery and consistent supply chain management.',
+    image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=800'
   },
 ]
 
@@ -124,10 +128,14 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl flex items-center justify-center">
-                <span className="text-gray-400 font-montserrat">Company Image</span>
+              <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-2xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1516387933901-8266440cda54?auto=format&fit=crop&q=80&w=1200" 
+                  alt="Industrial Warehouse"
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <div className="absolute -bottom-6 -left-6 w-24 h-24 border-4 border-gold rounded-xl" />
+              <div className="absolute -bottom-6 -left-6 w-24 h-24 border-4 border-gold rounded-xl -z-10" />
             </div>
           </div>
         </div>
@@ -173,16 +181,29 @@ export default function AboutPage() {
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {coreValues.map((value, index) => (
-              <div key={index} className="text-center p-6">
-                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gold/10 flex items-center justify-center">
-                  <value.icon className="w-8 h-8 text-gold" strokeWidth={1.5} />
+              <div 
+                key={index} 
+                className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-gold/20"
+              >
+                <div className="h-40 overflow-hidden relative">
+                  <img 
+                    src={value.image} 
+                    alt={value.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-charcoal/80 group-hover:bg-charcoal/70 transition-colors flex items-center justify-center">
+                    <value.icon className="w-12 h-12 text-gold" strokeWidth={1.5} />
+                  </div>
                 </div>
-                <h3 className="font-montserrat font-semibold text-lg text-charcoal mb-3">
-                  {value.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {value.description}
-                </p>
+                
+                <div className="p-6 text-center">
+                  <h3 className="font-montserrat font-semibold text-lg text-charcoal mb-3">
+                    {value.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {value.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

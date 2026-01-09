@@ -6,12 +6,12 @@ import { TrendingUp, TrendingDown, RefreshCw, Download, Clock } from 'lucide-rea
 import CTABanner from '@/components/CTABanner'
 
 const lmeRates = [
-  { id: 'copper', name: 'Copper', symbol: 'Cu', rate: 12846.5, change: 38, changePercent: 0.30, high: 12890, low: 12750, unit: '$/MT' },
-  { id: 'aluminium', name: 'Aluminium', symbol: 'Al', rate: 3063.5, change: -22, changePercent: -0.71, high: 3100, low: 3045, unit: '$/MT' },
-  { id: 'nickel', name: 'Nickel', symbol: 'Ni', rate: 16895, change: -155, changePercent: -0.91, high: 17100, low: 16800, unit: '$/MT' },
-  { id: 'lead', name: 'Lead', symbol: 'Pb', rate: 2013.5, change: -42, changePercent: -2.04, high: 2060, low: 2000, unit: '$/MT' },
-  { id: 'zinc', name: 'Zinc', symbol: 'Zn', rate: 3171, change: -34, changePercent: -1.06, high: 3220, low: 3150, unit: '$/MT' },
-  { id: 'tin', name: 'Tin', symbol: 'Sn', rate: 41900, change: 25, changePercent: 0.06, high: 42100, low: 41700, unit: '$/MT' },
+  { id: 'copper', name: 'Copper', symbol: 'Cu', rate: 12885, change: 38.5, changePercent: 0.30, high: 12900, low: 12820, unit: '$/MT', image: 'https://images.unsplash.com/photo-1611273298545-0361288f341d?auto=format&fit=crop&q=80&w=200' },
+  { id: 'aluminium', name: 'Aluminium', symbol: 'Al', rate: 3081, change: 17.5, changePercent: 0.57, high: 3095, low: 3060, unit: '$/MT', image: 'https://images.unsplash.com/photo-1584013323583-825c93faa1e7?auto=format&fit=crop&q=80&w=200' },
+  { id: 'nickel', name: 'Nickel', symbol: 'Ni', rate: 16920, change: 25, changePercent: 0.15, high: 17130, low: 16850, unit: '$/MT', image: 'https://images.unsplash.com/photo-1542332213-9b5a5a3fab35?auto=format&fit=crop&q=80&w=200' },
+  { id: 'lead', name: 'Lead', symbol: 'Pb', rate: 2006, change: -7.5, changePercent: -0.37, high: 2047, low: 2000, unit: '$/MT', image: 'https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&q=80&w=200' },
+  { id: 'zinc', name: 'Zinc', symbol: 'Zn', rate: 3107, change: -64, changePercent: -2.02, high: 3152, low: 3100, unit: '$/MT', image: 'https://images.unsplash.com/photo-1533038590840-1cde6e66b060?auto=format&fit=crop&q=80&w=200' },
+  { id: 'tin', name: 'Tin', symbol: 'Sn', rate: 44400, change: 2500, changePercent: 5.97, high: 44800, low: 43500, unit: '$/MT', image: 'https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?auto=format&fit=crop&q=80&w=200' },
 ]
 
 const mcxRates = [
@@ -149,11 +149,11 @@ export default function LiveRatesPage() {
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
-                      <span className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center">
-                        <span className="font-montserrat font-bold text-lg text-gold">
-                          {metal.symbol}
-                        </span>
-                      </span>
+                      <img 
+                        src={metal.image} 
+                        alt={metal.name}
+                        className="w-12 h-12 rounded-lg object-cover"
+                      />
                       <div>
                         <h3 className="font-montserrat font-semibold text-lg text-charcoal">
                           {metal.name}

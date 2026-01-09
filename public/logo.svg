@@ -1,0 +1,7 @@
+<svg width="200" height="50" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M25 45c-11.046 0-20-8.954-20-20S13.954 5 25 5s20 8.954 20 20c0 2.21-.358 4.335-1.022 6.32a.5.5 0 0 1-.951-.31A19 19 0 1 0 25 44c1.07 0 2.115-.088 3.13-.258a.5.5 0 0 1 .166.986A20.01 20.01 0 0 1 25 45z" fill="#D4AF37"/>
+  <text x="25" y="32" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="bold" font-size="18">
+    <tspan fill="#29B6F6">G</tspan><tspan fill="#D4AF37">M</tspan>
+  </text>
+  <text x="55" y="32" font-family="Montserrat, sans-serif" font-weight="bold" font-size="16" fill="#1A1A1A">INTERNATIONAL LLP</text>
+</svg>
