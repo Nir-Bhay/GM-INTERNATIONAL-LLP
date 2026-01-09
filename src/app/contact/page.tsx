@@ -52,10 +52,10 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1500))
-    
+
     setIsSubmitting(false)
     setSubmitted(true)
     setFormData({
@@ -74,7 +74,7 @@ export default function ContactPage() {
     <>
       {/* Hero Banner */}
       <section className="relative h-[320px] flex items-center bg-charcoal pt-[72px]">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: 'url("https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80")',
@@ -93,7 +93,7 @@ export default function ContactPage() {
             Get In Touch
           </h1>
           <p className="text-white/80 text-lg max-w-xl">
-            Let's discuss your metal export requirements.
+            Let&apos;s discuss your metal export requirements.
           </p>
         </div>
       </section>
@@ -121,9 +121,9 @@ export default function ContactPage() {
                       Message Sent!
                     </h3>
                     <p className="text-gray-500 mb-6">
-                      Thank you for your inquiry. We'll get back to you within 24 hours.
+                      Thank you for your inquiry. We&apos;ll get back to you within 24 hours.
                     </p>
-                    <button 
+                    <button
                       onClick={() => setSubmitted(false)}
                       className="btn-secondary"
                     >
@@ -242,8 +242,8 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    <button 
-                      type="submit" 
+                    <button
+                      type="submit"
                       disabled={isSubmitting}
                       className="btn-primary w-full md:w-auto disabled:opacity-50"
                     >
@@ -318,7 +318,7 @@ export default function ContactPage() {
                 <p className="text-gray-600 text-sm mb-4">
                   Chat with us on WhatsApp for quick responses.
                 </p>
-                <a 
+                <a
                   href="https://wa.me/919XXXXXXXXX"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -336,7 +336,7 @@ export default function ContactPage() {
                 </h3>
                 <div className="flex gap-3">
                   {[Linkedin, Twitter, Facebook, Instagram].map((Icon, index) => (
-                    <a 
+                    <a
                       key={index}
                       href="#"
                       className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:border-gold hover:text-gold transition-colors"
@@ -356,7 +356,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 flex items-center justify-center">
           <p className="text-gray-500">Google Map Embed Placeholder</p>
         </div>
-        
+
         {/* Map Overlay Card */}
         <div className="absolute bottom-8 left-8 bg-white rounded-xl p-6 max-w-xs border border-gray-100">
           <p className="font-montserrat font-semibold text-charcoal mb-2">
@@ -365,7 +365,7 @@ export default function ContactPage() {
           <p className="text-gray-500 text-sm mb-4">
             123 Trade Center, Industrial Area, New Delhi
           </p>
-          <a 
+          <a
             href="https://maps.google.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -410,7 +410,7 @@ export default function ContactPage() {
 
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <div 
+              <div
                 key={index}
                 className="border border-gray-100 rounded-xl overflow-hidden"
               >
@@ -421,11 +421,10 @@ export default function ContactPage() {
                   <span className="font-montserrat font-medium text-charcoal pr-4">
                     {faq.question}
                   </span>
-                  <ChevronDown 
-                    size={20} 
-                    className={`text-gold flex-shrink-0 transition-transform ${
-                      openFaq === index ? 'rotate-180' : ''
-                    }`}
+                  <ChevronDown
+                    size={20}
+                    className={`text-gold flex-shrink-0 transition-transform ${openFaq === index ? 'rotate-180' : ''
+                      }`}
                   />
                 </button>
                 {openFaq === index && (
